@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
 import { dbConnect } from "./db/db.js";
+import { connect } from "./service/rabbit.js";
 import uberRouter from "./routes/uber.route.js";
 
 dotenv.config();
@@ -25,6 +26,8 @@ app.use("/api/auth", uberRouter);
 // start server
 const startServer = async () => {
   try {
+    await connect()
+    console.log("rabbitmq is connected")
     await dbConnect();
 
     app.listen(PORT, () => {
