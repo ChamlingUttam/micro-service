@@ -1,0 +1,38 @@
+####
+POST http://localhost:3000/uber/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "driver",
+  "email": "driver@gmail.com",
+  "password": "12345678"
+}
+
+####
+
+POST http://localhost:3000/uber/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "driver@gmail.com",
+  "password": "12345678"
+}
+
+
+
+####
+POST http://localhost:3000/uber/api/auth/logout
+
+
+
+
+####
+
+####
+GET  http://localhost:3000/uber/api/auth/me
+
+
+####
+PATCH  http://localhost:3000/uber/api/auth/toggle-availability
+
+
