@@ -36,3 +36,8 @@ GET  http://localhost:3000/uber/api/auth/me
 PATCH  http://localhost:3000/uber/api/auth/toggle-availability
 
 
+
+
+### 
+POST  http://localhost:3000/ride/
+

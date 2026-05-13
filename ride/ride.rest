@@ -1,0 +1,8 @@
+POST http://localhost:3000/ride/create-ride
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMDJlMDNmNDRmYWFkZjJiZDU2MTYxZSIsImlhdCI6MTc3ODY2Njk5OSwiZXhwIjoxNzc4NjY3MDU5fQ.-sLikhn_GAY0uYHMi73MvTlFn3GLX6A2jaE-bAIPyCs
+
+{
+  "pickup": "Kathmandu",
+  "destination": "Butwal"
+}

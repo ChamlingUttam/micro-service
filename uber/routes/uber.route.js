@@ -5,6 +5,7 @@ import {
   me,
   logout,
   toggleAvailability,
+  waitForNewRide,
 } from "../controllers/uber.controller.js";
 import { protect } from "../middleware/auth.middleware.js";
 
@@ -18,5 +19,6 @@ router.post("/login", login);
 router.get("/me", protect, me);
 router.post("/logout", protect, logout);
 router.patch("/toggle-availability", protect, toggleAvailability);
+router.get('/new-ride',protect,waitForNewRide)
 
 export default router;

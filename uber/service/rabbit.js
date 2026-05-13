@@ -43,14 +43,12 @@
 
 
 
-
-
+import "dotenv/config"
 import amqp from "amqplib";
 
 let connection;
 let channel;
 
-// ─── CONNECT ─────────────────────────────
 export const connect = async () => {
   try {
     const RABBITMQ_URL = process.env.RABBIT_URL;
@@ -69,23 +67,28 @@ export const connect = async () => {
   }
 };
 
-// ─── PUBLISH ─────────────────────────────
 export const publishToQueue = async (queueName, data) => {
   if (!channel) await connect();
 
-  await channel.assertQueue(queueName);
+  await channel.assertQueue(queueName, {
+    durable: true,
+  });
 
   channel.sendToQueue(
     queueName,
-    Buffer.from(JSON.stringify(data))
+    Buffer.from(JSON.stringify(data)),
+    {
+      persistent: true,
+    }
   );
 };
 
-// ─── SUBSCRIBE ───────────────────────────
 export const subscribeToQueue = async (queueName, callback) => {
   if (!channel) await connect();
 
-  await channel.assertQueue(queueName);
+  await channel.assertQueue(queueName, {
+    durable: true,
+  });
 
   channel.consume(queueName, (message) => {
     if (message) {

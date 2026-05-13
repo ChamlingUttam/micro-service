@@ -37,7 +37,7 @@ export const register = async (req, res) => {
     res.cookie("token", token, cookieOptions);
 
     return res.status(201).json({
-      token : user.token,
+      token ,
       _id: user._id,
       username: user.username,
       email: user.email,
@@ -74,7 +74,7 @@ export const login = async (req, res) => {
     res.cookie("token", token, cookieOptions);
 
     return res.json({
-      token:user.token,
+      token,
       _id: user._id,
       username: user.username,
       email: user.email,
