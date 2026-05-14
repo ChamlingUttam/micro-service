@@ -1,8 +1,21 @@
 POST http://localhost:3000/ride/create-ride
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMDJlMDNmNDRmYWFkZjJiZDU2MTYxZSIsImlhdCI6MTc3ODY2Njk5OSwiZXhwIjoxNzc4NjY3MDU5fQ.-sLikhn_GAY0uYHMi73MvTlFn3GLX6A2jaE-bAIPyCs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMDJlMDNmNDRmYWFkZjJiZDU2MTYxZSIsImlhdCI6MTc3ODczNTAyMSwiZXhwIjoxNzc4ODIxNDIxfQ.a8HgiRdbR8XcTR1UIn5lTvHEqeUAQFO-TaSftrrhh3I
 
 {
   "pickup": "Kathmandu",
   "destination": "Butwal"
 }
+
+####
+POST http://localhost:3000/ride/create-ride
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMDJmMmE0NzdiZTVkYzllOTVhOTc3MSIsImlhdCI6MTc3ODczNzU1OSwiZXhwIjoxNzc4ODIzOTU5fQ.z9c-5LWWaEP4cLb_pUY5MMuGbXhNO--MGEkpIKvHalU
+
+{
+  "pickup": "Kathmandu",
+  "destination": "jhapa"
+}
+
+
+

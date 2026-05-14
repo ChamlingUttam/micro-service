@@ -2,6 +2,8 @@
 import bcrypt from "bcryptjs";
 import { generateToken } from "../utils/generateToken.js";
 import User from "../models/user.model.js";
+import {subscribeToQueue} from '../service/rabbit.js'
+import EventEmitter from 'node:events';
 
 // ─── COOKIE CONFIG ─────────────────────────────
 const cookieOptions = {
@@ -107,3 +109,22 @@ export const logout = async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 };
+
+
+export const acceptRide = async()=>{
+    // Long polling: wait for 'ride-accepted' event
+    rideEventEmitter.once('ride-accepted', (data) => {
+        res.send(data);
+    });
+
+    // Set timeout for long polling (e.g., 30 seconds)
+    setTimeout(() => {
+        res.status(204).send();
+    }, 30000);
+}
+
+subscribeToQueue('ride-accepted',async(msg)=>{
+  const data = JSON.parse(msg.content.toString());
+    rideEventEmitter.emit('ride-accepted', data);
+  
+})

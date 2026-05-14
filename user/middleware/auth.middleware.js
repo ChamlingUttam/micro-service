@@ -1,9 +1,67 @@
+// import jwt from "jsonwebtoken";
+// import User from "../models/user.model.js";
+
+// export const protect = async (req, res, next) => {
+//   try {
+//     const token = req.cookies?.token;
+
+//     if (!token) {
+//       return res.status(401).json({
+//         message: "Not authorized, no token",
+//       });
+//     }
+
+//     const decoded = jwt.verify(
+//       token,
+//       process.env.JWT_SECRET
+//     );
+
+//     const user = await User.findById(decoded.id).select("-password");
+
+//     if (!user) {
+//       return res.status(401).json({
+//         message: "User not found",
+//       });
+//     }
+
+//     req.user = user;
+
+//     next();
+//   } catch (error) {
+//     console.error("Auth middleware error:", error);
+
+//     return res.status(401).json({
+//       message: "Not authorized, token failed",
+//     });
+//   }
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
 
 export const protect = async (req, res, next) => {
   try {
-    const token = req.cookies?.token;
+    // ✅ this is the only line that changed
+    const token = req.cookies?.token || req.headers.authorization?.split(' ')[1];
 
     if (!token) {
       return res.status(401).json({
@@ -11,10 +69,7 @@ export const protect = async (req, res, next) => {
       });
     }
 
-    const decoded = jwt.verify(
-      token,
-      process.env.JWT_SECRET
-    );
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
     const user = await User.findById(decoded.id).select("-password");
 
@@ -25,11 +80,10 @@ export const protect = async (req, res, next) => {
     }
 
     req.user = user;
-
     next();
+
   } catch (error) {
     console.error("Auth middleware error:", error);
-
     return res.status(401).json({
       message: "Not authorized, token failed",
     });

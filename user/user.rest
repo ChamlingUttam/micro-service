@@ -10,5 +10,35 @@ Content-Type: application/json
 
 
 ####
+POST http://localhost:3001/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@gmail.com",
+  "password": "12345678"
+}
+
+
+####
 POST http://localhost:3001/api/auth/logout
 
+
+###
+
+GET http://localhost:3001/api/auth/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMDJlMDNmNDRmYWFkZjJiZDU2MTYxZSIsImlhdCI6MTc3ODczNTAyMSwiZXhwIjoxNzc4ODIxNDIxfQ.a8HgiRdbR8XcTR1UIn5lTvHEqeUAQFO-TaSftrrhh3I
+
+
+
+### Test user /me through gateway
+GET http://localhost:3000/user/api/auth/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMDJlMDNmNDRmYWFkZjJiZDU2MTYxZSIsImlhdCI6MTc3ODczNTAyMSwiZXhwIjoxNzc4ODIxNDIxfQ.a8HgiRdbR8XcTR1UIn5lTvHEqeUAQFO-TaSftrrhh3I
+
+
+
+###
+GET http://locahost:3001/api/auth/rideAccept
+Content-Type: application/application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMDJlMDNmNDRmYWFkZjJiZDU2MTYxZSIsImlhdCI6MTc3ODczNTAyMSwiZXhwIjoxNzc4ODIxNDIxfQ.a8HgiRdbR8XcTR1UIn5lTvHEqeUAQFO-TaSftrrhh3I
