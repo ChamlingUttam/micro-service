@@ -1,0 +1,57 @@
+####
+POST http://localhost:3000/uber/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "driver",
+  "email": "driver@gmail.com",
+  "password": "12345678"
+}
+
+####
+
+POST http://localhost:3000/uber/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "driver@gmail.com",
+  "password": "12345678"
+}
+
+
+
+####
+POST http://localhost:3000/uber/api/auth/logout
+
+
+
+
+####
+
+####
+GET  http://localhost:3000/uber/api/auth/me
+
+
+####
+PATCH  http://localhost:3000/uber/api/auth/toggle-availability
+
+
+####
+
+
+
+####
+
+GET http://localhost:3000/uber/api/auth/new-ride
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMDMwMjRkNzc3ZGZjYWFkYzM3NWFiYyIsImlhdCI6MTc3ODc3MDA4OCwiZXhwIjoxNzc5Mzc0ODg4fQ.-V2f9sIhaPhZoQGcrHrs2XoGWkGj2PyAnX89m6oHX7M
+
+### 
+
+
+PUT http://localhost:3000/ride/accept-ride?rideId=6a03024d777dfcaadc375abc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMDMwMjRkNzc3ZGZjYWFkYzM3NWFiYyIsImlhdCI6MTc3ODc3MDA4OCwiZXhwIjoxNzc5Mzc0ODg4fQ.-V2f9sIhaPhZoQGcrHrs2XoGWkGj2PyAnX89m6oHX7M
+
+
+
+
+###

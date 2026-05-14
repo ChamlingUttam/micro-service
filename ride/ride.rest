@@ -19,3 +19,18 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMDJmMmE0N
 
 
 
+####
+POST http://localhost:3000/ride/accept-ride
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMDJmMmE0NzdiZTVkYzllOTVhOTc3MSIsImlhdCI6MTc3ODczNzU1OSwiZXhwIjoxNzc4ODIzOTU5fQ.z9c-5LWWaEP4cLb_pUY5MMuGbXhNO--MGEkpIKvHalU
+
+{
+  "pickup": "Kathmandu",
+  "destination": "jhapa"
+}
+
+
+
+
+
+####

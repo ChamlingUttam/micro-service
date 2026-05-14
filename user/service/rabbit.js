@@ -36,7 +36,7 @@
 // };
 
 
-
+import "dotenv/config"
 import amqp from "amqplib";
 
 let connection;

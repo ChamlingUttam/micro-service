@@ -56,8 +56,8 @@
 
 
 
-import express from "express";
 import dotenv from "dotenv";
+import express from "express";
 import cookieParser from "cookie-parser";
 
 import { connect } from "./service/rabbit.js";
